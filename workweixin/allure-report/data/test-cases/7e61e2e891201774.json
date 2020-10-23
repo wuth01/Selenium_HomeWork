@@ -1,0 +1,92 @@
+{
+  "uid" : "7e61e2e891201774",
+  "name" : "testimport_success",
+  "fullName" : "test_workweixin.TestImport#testimport_success",
+  "historyId" : "1117b2bfffbbfe9daaeda4792c42882f",
+  "time" : {
+    "start" : 1603433978759,
+    "stop" : 1603433997829,
+    "duration" : 19070
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "status",
+    "time" : {
+      "start" : 1603433973363,
+      "stop" : 1603433973363,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "afterStages" : [ {
+    "name" : "status::0",
+    "time" : {
+      "start" : 1603434047490,
+      "stop" : 1603434047490,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "story",
+    "value" : "成功case"
+  }, {
+    "name" : "feature",
+    "value" : "导入联系人"
+  }, {
+    "name" : "tag",
+    "value" : "run(order=1)"
+  }, {
+    "name" : "suite",
+    "value" : "test_workweixin"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestImport"
+  }, {
+    "name" : "host",
+    "value" : "MS-NNZIEJQMVEHP"
+  }, {
+    "name" : "thread",
+    "value" : "9640-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_workweixin"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "run(order=1)" ]
+  },
+  "source" : "7e61e2e891201774.json",
+  "parameterValues" : [ ]
+}

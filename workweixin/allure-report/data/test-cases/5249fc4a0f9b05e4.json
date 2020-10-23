@@ -1,0 +1,92 @@
+{
+  "uid" : "5249fc4a0f9b05e4",
+  "name" : "test_import_fail1",
+  "fullName" : "test_workweixin.TestImport#test_import_fail1",
+  "historyId" : "b42af46fcf8df6b12a2ca582984a09a9",
+  "time" : {
+    "start" : 1603434005374,
+    "stop" : 1603434021832,
+    "duration" : 16458
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "status",
+    "time" : {
+      "start" : 1603433973363,
+      "stop" : 1603433973363,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "afterStages" : [ {
+    "name" : "status::0",
+    "time" : {
+      "start" : 1603434047490,
+      "stop" : 1603434047490,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "feature",
+    "value" : "导入联系人"
+  }, {
+    "name" : "story",
+    "value" : "批量导入模板错误"
+  }, {
+    "name" : "tag",
+    "value" : "run(order=2)"
+  }, {
+    "name" : "suite",
+    "value" : "test_workweixin"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestImport"
+  }, {
+    "name" : "host",
+    "value" : "MS-NNZIEJQMVEHP"
+  }, {
+    "name" : "thread",
+    "value" : "9640-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_workweixin"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "run(order=2)" ]
+  },
+  "source" : "5249fc4a0f9b05e4.json",
+  "parameterValues" : [ ]
+}
