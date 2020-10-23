@@ -29,17 +29,15 @@ def get_filename(self):
 """
 点击导入通讯录按钮
 """
-def click_contacts(self):
+def contacts(self):
     btn_import = self.driver.execute_script('return document.getElementsByClassName("index_service_cnt_itemWrap")[1]')
-    btn_import.click()
-    return
+    return btn_import
 """
-点击提交按钮
+提交按钮
 """
 def submit(self):
     btn_submit = self.driver.find_element_by_xpath('//*[@class="qui_btn ww_btn ww_btn_Large ww_btn_Blue ww_fileImporter_submit"]')
-    btn_submit.click()
-    return
+    return btn_submit
 
 @allure.feature("导入联系人")
 class TestImport(Base):
@@ -59,13 +57,13 @@ class TestImport(Base):
     def testimport_success(self):
         add_cookies(self)
         sleep(3)
-        click_contacts(self)
+        contacts(self).click()
         up_files(self).send_keys('E:\Selenium_HomeWork\workweixin\qqq.xlsx')
         sleep(3)
         filename = get_filename(self)
         assert "qqq.xlsx" == filename
         sleep(3)
-        submit(self)
+        submit(self).click()
         sleep(10)
 
         text = self.driver.find_element_by_xpath('//*[@class="ww_fileImporter_successImportText"]').text
@@ -76,13 +74,13 @@ class TestImport(Base):
     @pytest.mark.run(order=2)
     def test_import_fail1(self):
         add_cookies(self)
-        click_contacts(self)
+        contacts(self).click()
         up_files(self).send_keys('E:\Selenium_HomeWork\workweixin\qq.xls')
         sleep(3)
         filename = get_filename(self)
         assert "qq.xls" == filename
         sleep(3)
-        submit(self)
+        submit(self).click()
         sleep(10)
         text = self.driver.find_element_by_xpath('//*[@class="ww_fileImporter_errorTitle"]').text
         assert "批量导入模板错误" == text
@@ -91,13 +89,13 @@ class TestImport(Base):
     @pytest.mark.run(order=3)
     def test_import_fail2(self):
         add_cookies(self)
-        click_contacts(self)
+        contacts(self).click()
         up_files(self).send_keys('E:\Selenium_HomeWork\workweixin\qqq.xlsx')
         sleep(3)
         filename = get_filename(self)
         assert "qqq.xlsx" == filename
         sleep(3)
-        submit(self)
+        submit(self).click()
         sleep(10)
         text = self.driver.find_element_by_xpath('//*[@class="ww_fileImporter_successImportText"]').text
         assert "无变化1人" == text
