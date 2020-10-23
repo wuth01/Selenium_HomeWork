@@ -26,6 +26,13 @@ def up_files(self):
 def get_filename(self):
     filename = self.driver.find_element_by_css_selector(".ww_fileImporter_fileContainer_fileNames").text
     return filename
+"""
+点击导入通讯录按钮
+"""
+def click_contacts(self):
+    btn_import = self.driver.execute_script('return document.getElementsByClassName("index_service_cnt_itemWrap")[1]')
+    btn_import.click()
+    return
 
 @allure.feature("导入联系人")
 class TestImport(Base):
@@ -45,8 +52,7 @@ class TestImport(Base):
     def testimport_success(self):
         add_cookies(self)
         sleep(3)
-        btn_import = self.driver.execute_script('return document.getElementsByClassName("index_service_cnt_itemWrap")[1]')
-        btn_import.click()
+        click_contacts(self)
         up_files(self).send_keys('E:\Selenium_HomeWork\workweixin\qqq.xlsx')
         sleep(3)
         filename = get_filename(self)
@@ -64,8 +70,7 @@ class TestImport(Base):
     @pytest.mark.run(order=2)
     def test_import_fail1(self):
         add_cookies(self)
-        btn_import = self.driver.execute_script('return document.getElementsByClassName("index_service_cnt_itemWrap")[1]')
-        btn_import.click()
+        click_contacts(self)
         up_files(self).send_keys('E:\Selenium_HomeWork\workweixin\qq.xls')
         sleep(3)
         filename = get_filename(self)
@@ -81,8 +86,7 @@ class TestImport(Base):
     @pytest.mark.run(order=3)
     def test_import_fail2(self):
         add_cookies(self)
-        btn_import = self.driver.execute_script('return document.getElementsByClassName("index_service_cnt_itemWrap")[1]')
-        btn_import.click()
+        click_contacts(self)
         up_files(self).send_keys('E:\Selenium_HomeWork\workweixin\qqq.xlsx')
         sleep(3)
         filename = get_filename(self)
