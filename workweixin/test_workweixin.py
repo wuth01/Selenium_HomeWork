@@ -29,6 +29,7 @@ class TestImport(Base):
         db.close()
 
     @allure.story("成功case")
+    @pytest.mark.run(order=1)
     def testimport_success(self):
         add_cookies(self)
         sleep(3)
@@ -48,6 +49,7 @@ class TestImport(Base):
 
 
     @allure.story("批量导入模板错误")
+    @pytest.mark.run(order=2)
     def test_import_fail1(self):
         add_cookies(self)
         btn_import = self.driver.execute_script('return document.getElementsByClassName("index_service_cnt_itemWrap")[1]')
@@ -64,6 +66,7 @@ class TestImport(Base):
         assert "批量导入模板错误" == text
 
     @allure.story("无变化1人")
+    @pytest.mark.run(order=3)
     def test_import_fail2(self):
         add_cookies(self)
         btn_import = self.driver.execute_script('return document.getElementsByClassName("index_service_cnt_itemWrap")[1]')
