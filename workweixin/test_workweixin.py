@@ -14,9 +14,18 @@ def add_cookies(self):
         print(cookie)
     self.driver.refresh()
     sleep(3)
+"""
+获取上传文件按钮
+"""
 def up_files(self):
     btn =self.driver.find_element_by_xpath('//*[@class="ww_fileImporter_fileContainer_uploadInputMask"]')
     return btn
+"""
+获取上传的文件名
+"""
+def get_filename(self):
+    filename = self.driver.find_element_by_css_selector(".ww_fileImporter_fileContainer_fileNames").text
+    return filename
 
 @allure.feature("导入联系人")
 class TestImport(Base):
@@ -40,7 +49,7 @@ class TestImport(Base):
         btn_import.click()
         up_files(self).send_keys('E:\Selenium_HomeWork\workweixin\qqq.xlsx')
         sleep(3)
-        filename = self.driver.find_element_by_css_selector(".ww_fileImporter_fileContainer_fileNames").text
+        filename = get_filename(self)
         assert "qqq.xlsx" == filename
         sleep(3)
         btn_submit=self.driver.find_element_by_xpath('//*[@class="qui_btn ww_btn ww_btn_Large ww_btn_Blue ww_fileImporter_submit"]')
@@ -59,7 +68,7 @@ class TestImport(Base):
         btn_import.click()
         up_files(self).send_keys('E:\Selenium_HomeWork\workweixin\qq.xls')
         sleep(3)
-        filename = self.driver.find_element_by_css_selector(".ww_fileImporter_fileContainer_fileNames").text
+        filename = get_filename(self)
         assert "qq.xls" == filename
         sleep(3)
         btn_submit=self.driver.find_element_by_xpath('//*[@class="qui_btn ww_btn ww_btn_Large ww_btn_Blue ww_fileImporter_submit"]')
@@ -76,7 +85,7 @@ class TestImport(Base):
         btn_import.click()
         up_files(self).send_keys('E:\Selenium_HomeWork\workweixin\qqq.xlsx')
         sleep(3)
-        filename = self.driver.find_element_by_css_selector(".ww_fileImporter_fileContainer_fileNames").text
+        filename = get_filename(self)
         assert "qqq.xlsx" == filename
         sleep(3)
         btn_submit=self.driver.find_element_by_xpath('//*[@class="qui_btn ww_btn ww_btn_Large ww_btn_Blue ww_fileImporter_submit"]')
