@@ -64,7 +64,7 @@ class TestImport(Base):
         assert "qqq.xlsx" == filename
         sleep(3)
         submit(self).click()
-        sleep(10)
+        sleep(5)
 
         text = self.driver.find_element_by_xpath('//*[@class="ww_fileImporter_successImportText"]').text
         assert "导入成功1人"==text
@@ -81,7 +81,7 @@ class TestImport(Base):
         assert "qq.xls" == filename
         sleep(3)
         submit(self).click()
-        sleep(10)
+        sleep(5)
         text = self.driver.find_element_by_xpath('//*[@class="ww_fileImporter_errorTitle"]').text
         assert "批量导入模板错误" == text
 
@@ -96,6 +96,6 @@ class TestImport(Base):
         assert "qqq.xlsx" == filename
         sleep(3)
         submit(self).click()
-        sleep(10)
+        sleep(5)
         text = self.driver.find_element_by_xpath('//*[@class="ww_fileImporter_successImportText"]').text
         assert "无变化1人" == text

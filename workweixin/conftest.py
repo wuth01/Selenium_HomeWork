@@ -13,7 +13,7 @@ def pytest_collection_modifyitems(
     session: "Session", config: "Config", items: List["Item"]
 ) -> None:
     """
-    用例结果显示汉子
+    用例结果显示汉字
     """
     for item in items:
 
