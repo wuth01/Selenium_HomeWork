@@ -14,6 +14,9 @@ def add_cookies(self):
         print(cookie)
     self.driver.refresh()
     sleep(3)
+def up_files(self):
+    btn =self.driver.find_element_by_xpath('//*[@class="ww_fileImporter_fileContainer_uploadInputMask"]')
+    return btn
 
 @allure.feature("导入联系人")
 class TestImport(Base):
@@ -35,7 +38,7 @@ class TestImport(Base):
         sleep(3)
         btn_import = self.driver.execute_script('return document.getElementsByClassName("index_service_cnt_itemWrap")[1]')
         btn_import.click()
-        self.driver.find_element_by_xpath('//*[@class="ww_fileImporter_fileContainer_uploadInputMask"]').send_keys('E:\Selenium_HomeWork\workweixin\qqq.xlsx')
+        up_files(self).send_keys('E:\Selenium_HomeWork\workweixin\qqq.xlsx')
         sleep(3)
         filename = self.driver.find_element_by_css_selector(".ww_fileImporter_fileContainer_fileNames").text
         assert "qqq.xlsx" == filename
@@ -54,7 +57,7 @@ class TestImport(Base):
         add_cookies(self)
         btn_import = self.driver.execute_script('return document.getElementsByClassName("index_service_cnt_itemWrap")[1]')
         btn_import.click()
-        self.driver.find_element_by_xpath('//*[@class="ww_fileImporter_fileContainer_uploadInputMask"]').send_keys('E:\Selenium_HomeWork\workweixin\qq.xls')
+        up_files(self).send_keys('E:\Selenium_HomeWork\workweixin\qq.xls')
         sleep(3)
         filename = self.driver.find_element_by_css_selector(".ww_fileImporter_fileContainer_fileNames").text
         assert "qq.xls" == filename
@@ -71,7 +74,7 @@ class TestImport(Base):
         add_cookies(self)
         btn_import = self.driver.execute_script('return document.getElementsByClassName("index_service_cnt_itemWrap")[1]')
         btn_import.click()
-        self.driver.find_element_by_xpath('//*[@class="ww_fileImporter_fileContainer_uploadInputMask"]').send_keys('E:\Selenium_HomeWork\workweixin\qqq.xlsx')
+        up_files(self).send_keys('E:\Selenium_HomeWork\workweixin\qqq.xlsx')
         sleep(3)
         filename = self.driver.find_element_by_css_selector(".ww_fileImporter_fileContainer_fileNames").text
         assert "qqq.xlsx" == filename
